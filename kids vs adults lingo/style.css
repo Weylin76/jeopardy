@@ -1,0 +1,13 @@
+body{
+    max-width: 50%;
+    margin: 1rem auto;
+    background-color: #999;
+    color: #fff;
+    text-align: center;
+}
+
+.container{
+    background-color: aquamarine;
+    color: black;
+    font-size: 2rem;
+}
