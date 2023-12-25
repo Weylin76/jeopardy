@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wizardly Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <div>
+            <span id="team1"><span>Team 1 Score: </span><button id="btn1-subtract">-</button><span
+                    id="team1Score">0</span>
+                <button id="btn1-add">+</button></span>
+            <span id="team2" class="justRight">
+                <span>Team 2 Score: </span>
+                <button id="btn2-subtract">-</button>
+                <span id="team2Score">0</span> <!-- Corrected ID here -->
+                <button id="btn2-add">+</button>
+            </span>
+        </div>
+        <div id="current-question">Select a question to begin!</div>
+        <div id="current-answer">Answer...</div>
+        <div id="trivia-board">
+            <!-- Category Names -->
+            <div class="category-name">W"easy"ley Q's</div>
+            <div class="category-name">Hardly Potter</div>
+            <div class="category-name">Hairy Potheads</div>
+            <div class="category-name">Disney or dat knee</div>
+            <div class="category-name">Qui”ditch” the Potter</div>
+            <div class="category-name">Jacked Skeletons</div>
+
+            <!-- Points for each Category, ordered by rows -->
+            <!-- 200 Points Row -->
+            <button class="question-points" id="w200">200 Points</button>
+            <button class="question-points" id="hp200">200 Points</button>
+            <button class="question-points" id="hpot200">200 Points</button>
+            <button class="question-points" id="d200">200 Points</button>
+            <button class="question-points" id="q200">200 Points</button>
+            <button class="question-points" id="j200">200 Points</button>
+
+            <!-- 400 Points Row -->
+            <button class="question-points" id="w400">400 Points</button>
+            <button class="question-points" id="hp400">400 Points</button>
+            <button class="question-points" id="hpot400">400 Points</button>
+            <button class="question-points" id="d400">400 Points</button>
+            <button class="question-points" id="q400">400 Points</button>
+            <button class="question-points" id="j400">400 Points</button>
+
+            <!-- 600 Points Row -->
+            <!-- Continue the pattern for other point values -->
+            <button class="question-points" id="w600">600 Points</button>
+            <button class="question-points" id="hp600">600 Points</button>
+            <button class="question-points" id="hpot600">600 Points</button>
+            <button class="question-points" id="d600">600 Points</button>
+            <button class="question-points" id="q600">600 Points</button>
+            <button class="question-points" id="j600">600 Points</button>
+
+            <!-- 800 Points Row -->
+            <!-- Continue the pattern for other point values -->
+            <button class="question-points" id="w800">800 Points</button>
+            <button class="question-points" id="hp800">800 Points</button>
+            <button class="question-points" id="hpot800">800 Points</button>
+            <button class="question-points" id="d800">800 Points</button>
+            <button class="question-points" id="q800">800 Points</button>
+            <button class="question-points" id="j800">800 Points</button>
+
+            <!-- 1000 Points Row -->
+            <button class="question-points" id="w1000">1000 Points</button>
+            <button class="question-points" id="hp1000">1000 Points</button>
+            <button class="question-points" id="hpot1000">1000 Points</button>
+            <button class="question-points" id="d1000">1000 Points</button>
+            <button class="question-points" id="q1000">1000 Points</button>
+            <button class="question-points" id="j1000">1000 Points</button>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
