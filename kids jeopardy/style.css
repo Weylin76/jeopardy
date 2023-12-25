@@ -1,0 +1,142 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+}
+
+#game-container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-name{
+    text-align: center;
+}
+
+#game-container > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.justRight {
+    text-align: right;
+}
+
+
+#trivia-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 categories */
+    grid-auto-rows: minmax(50px, auto); /* Minimum row height */
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.category-name {
+    background-color: #3333cc;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.question-points {
+    background-color: #3366ff;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.question-points:hover {
+    background-color: #3355ee;
+    cursor: pointer;
+}
+
+#current-question {
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#player-answer {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+#submit-answer {
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-answer:hover {
+    background-color: #218838;
+}
+
+#current-answer{
+    font-size: 24px;
+}
+
+#score {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.gray{
+    background-color: gray;
+}
+
+.red{
+    background-color: red;
+}
+
+#team1{
+    background-color: lightblue;
+    margin: 25px auto;
+    font-size: 26px;
+}
+
+#team1 button{
+    font-size: 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+#team2{
+    background-color: lightsalmon;
+    margin: 25px auto;
+    font-size: 26px;
+}
+
+#team2 button{
+    font-size: 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.justRight{
+    align-items: right;
+    justify-self: right;
+}
+
