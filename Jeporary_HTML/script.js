@@ -116,13 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     handleQuestionButtonClick('j600');
     handleQuestionButtonClick('j800');
     handleQuestionButtonClick('j1000');
-   
-    // Function to reset the question and answer
-    function resetQuestionAndAnswer() {
-        currentQuestionDisplay.textContent = 'Select a question to begin!';
-        currentAnswerDisplay.textContent = '';
-        document.querySelectorAll('.question-points').forEach(button => button.classList.remove('gray'));
-    }
 });
 
 // Correctly retrieve the elements
