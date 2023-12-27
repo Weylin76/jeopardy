@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
     const questionContainer = document.querySelector('#questionContainer');
     const answerContainer = document.querySelector('#answerContainer');
     const nextQuestionButton = document.querySelector('#nextQuestionButton');
     const checkAnswerButton = document.querySelector('#checkAnswerButton');
+    const startQuizButton = document.querySelector('#startQuizButton');
+    const questionCountInput = document.querySelector('#questionCount');
+    const questionSourceElement = document.querySelector('#questionSource'); // Ensure this element exists in HTM
 
     const adultQuizQuestions = [
         { question: "What does it mean when kids say something is 'lit'?", answer: "It means something is really good, exciting, or fun." },
@@ -72,27 +76,69 @@ document.addEventListener('DOMContentLoaded', () => {
         { question: "What did 'Blockbuster night' mean?", answer: "Going to Blockbuster to rent movies for a night in, before streaming services." }
     ];
 
+
+
+   
+    let quizQuestions = [];
     let currentQuestionIndex = 0;
-    let isAdultQuestion = true;
     let currentAnswer = '';
 
-    function displayQuestion() {
-        if (isAdultQuestion) {
-            questionContainer.textContent = adultQuizQuestions[currentQuestionIndex % adultQuizQuestions.length].question;
-            currentAnswer = adultQuizQuestions[currentQuestionIndex % adultQuizQuestions.length].answer;
-        } else {
-            questionContainer.textContent = kidQuizQuestions[currentQuestionIndex % kidQuizQuestions.length].question;
-            currentAnswer = kidQuizQuestions[currentQuestionIndex % kidQuizQuestions.length].answer;
+    startQuizButton.addEventListener('click', () => {
+        const questionCount = parseInt(questionCountInput.value);
+        if (isNaN(questionCount) || questionCount < 2 || questionCount > 60) {
+            alert("Please enter a valid number between 2 and 60.");
+            return;
         }
-        answerContainer.textContent = ''; // Hide answer until "Check Answer" is clicked
-        isAdultQuestion = !isAdultQuestion;
+        generateQuizQuestions(questionCount);
+        displayNextQuestion();
+    });
+
+    function generateQuizQuestions(count) {
+        quizQuestions = [];
+        let tempAdultQuestions = [...adultQuizQuestions];
+        let tempKidQuestions = [...kidQuizQuestions];
+
+        for (let i = 0; i < count / 2; i++) {
+            if (tempAdultQuestions.length > 0) {
+                let adultIndex = Math.floor(Math.random() * tempAdultQuestions.length);
+                quizQuestions.push(tempAdultQuestions[adultIndex]);
+                tempAdultQuestions.splice(adultIndex, 1);
+            }
+            if (tempKidQuestions.length > 0) {
+                let kidIndex = Math.floor(Math.random() * tempKidQuestions.length);
+                quizQuestions.push(tempKidQuestions[kidIndex]);
+                tempKidQuestions.splice(kidIndex, 1);
+            }
+        }
+    }
+
+    function displayNextQuestion() {
+        if (currentQuestionIndex >= quizQuestions.length) {
+            alert("Quiz complete!");
+            return;
+        }
+        let question = quizQuestions[currentQuestionIndex];
+        questionContainer.textContent = question.question;
+        currentAnswer = question.answer;
+        answerContainer.textContent = '';
+
+        // Check if the current question is from adultQuizQuestions or kidQuizQuestions
+        if (adultQuizQuestions.includes(question)) {
+            questionSourceElement.textContent = 'Adult Question';
+            container.classList.add('adult');
+        } else {
+            questionSourceElement.textContent = "Kid's Question";
+            container.classList.remove('adult');
+        }
+
+   
+
         currentQuestionIndex++;
     }
 
-    nextQuestionButton.addEventListener('click', displayQuestion);
+    nextQuestionButton.addEventListener('click', displayNextQuestion);
 
     checkAnswerButton.addEventListener('click', () => {
-        answerContainer.textContent = currentAnswer; // Reveal the answer
+        answerContainer.textContent = currentAnswer;
     });
 });
-

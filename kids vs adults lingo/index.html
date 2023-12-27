@@ -12,13 +12,19 @@
 <body>
     <h1>Kids and Adults Lingo</h1>
     <div class="container">
+        <div id="setup-container">
+            <div>Enter a number of total questions 2 - 60 (even numbers only)</div>
+            <input type="number" id="questionCount" min="2" max="60" placeholder="Enter number of questions (1-60)">
+            <button id="startQuizButton">Start Quiz</button>
+        </div>
         <div>Question</div>
+        <div id="questionSource">Source: </div>
         <span id="questionContainer">queston</span>
         <div>Answer</div>
         <span id="answerContainer">answer</span>
     </div>
-    <button id="nextQuestionButton">Next Question</button>
     <button id="checkAnswerButton">Check Answer</button>
+    <button id="nextQuestionButton">Next Question</button>
 
 </body>
 

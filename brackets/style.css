@@ -1,0 +1,32 @@
+#bracket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.matchup {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 200px;
+    text-align: center;
+}
+
+.round {
+    margin-bottom: 30px;
+}
+
+.winner {
+    font-weight: bold;
+    color: green;
+}
+
+/* #nextRoundButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+} */
+
+
+
+
