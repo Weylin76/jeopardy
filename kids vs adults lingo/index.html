@@ -10,21 +10,34 @@
 </head>
 
 <body>
-    <h1>Kids and Adults Lingo</h1>
+    <h1>Kids and Adult Lingo</h1>
+    <div id="scoreBoard">
+        <span id="team1"><span>Adult Score: </span><button id="btn1-subtract">-</button><span id="team1Score">0</span>
+            <button id="btn1-add">+</button></span>
+        <span id="team2" class="justRight">
+            <span>Kid Score: </span>
+            <button id="btn2-subtract">-</button>
+            <span id="team2Score">0</span> <!-- Corrected ID here -->
+            <button id="btn2-add">+</button>
+        </span>
+    </div>
     <div class="container">
         <div id="setup-container">
             <div>Enter a number of total questions 2 - 60 (even numbers only)</div>
-            <input type="number" id="questionCount" min="2" max="60" placeholder="Enter number of questions (1-60)">
-            <button id="startQuizButton">Start Quiz</button>
+            <input type="number" id="questionCount" min="2" max="60" placeholder="Enter number of questions (1-60)"
+                style="font-size: 1.5rem;">
+            <button id="startQuizButton" class="btn">Start Quiz</button>
         </div>
-        <div>Question</div>
-        <div id="questionSource">Source: </div>
-        <span id="questionContainer">queston</span>
-        <div>Answer</div>
-        <span id="answerContainer">answer</span>
+        <div id="lil-jon">
+            <button id="nextQuestionButton" class="btn">Next Question</button>
+            <div id="questionSource">Source: </div>
+            <div id="questionContainer">Question</div>
+            <button id="checkAnswerButton" class="btn">Check Answer</button>
+            <div id="answerContainer">answer</div>
+        </div>
     </div>
-    <button id="checkAnswerButton">Check Answer</button>
-    <button id="nextQuestionButton">Next Question</button>
+
+
 
 </body>
 

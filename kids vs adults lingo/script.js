@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
+    const container = document.querySelector('#lil-jon');
+    const setupContainer = document.querySelector('#setup-container');
     const questionContainer = document.querySelector('#questionContainer');
     const answerContainer = document.querySelector('#answerContainer');
     const nextQuestionButton = document.querySelector('#nextQuestionButton');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const startQuizButton = document.querySelector('#startQuizButton');
     const questionCountInput = document.querySelector('#questionCount');
     const questionSourceElement = document.querySelector('#questionSource'); // Ensure this element exists in HTM
+    const btns = document.querySelectorAll('.btn');
 
     const adultQuizQuestions = [
         { question: "What does it mean when kids say something is 'lit'?", answer: "It means something is really good, exciting, or fun." },
@@ -75,9 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { question: "What was a 'Discman'?", answer: "A portable CD player, similar to a Walkman but for CDs." },
         { question: "What did 'Blockbuster night' mean?", answer: "Going to Blockbuster to rent movies for a night in, before streaming services." }
     ];
-
-
-
    
     let quizQuestions = [];
     let currentQuestionIndex = 0;
@@ -110,7 +109,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 tempKidQuestions.splice(kidIndex, 1);
             }
         }
-    }
+    }    
+
+    btns.forEach(btn => {
+        btn.addEventListener('mousedown', () => {
+            btn.classList.add('pressed');
+        });
+
+        btn.addEventListener('mouseup', () => {
+            btn.classList.remove('pressed');
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.classList.remove('pressed');
+        });
+    });
 
     function displayNextQuestion() {
         if (currentQuestionIndex >= quizQuestions.length) {
@@ -126,12 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (adultQuizQuestions.includes(question)) {
             questionSourceElement.textContent = 'Adult Question';
             container.classList.add('adult');
+            container.classList.remove('kid');
+            setupContainer.classList.add('display-none');
         } else {
             questionSourceElement.textContent = "Kid's Question";
             container.classList.remove('adult');
+            container.classList.add('kid');
+            setupContainer.classList.add('display-none');
         }
-
-   
 
         currentQuestionIndex++;
     }
@@ -141,4 +156,36 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAnswerButton.addEventListener('click', () => {
         answerContainer.textContent = currentAnswer;
     });
+
+});
+
+// Correctly retrieve the elements
+const team1Score = document.querySelector('#team1Score');
+const team2Score = document.querySelector('#team2Score');
+const addTeam1 = document.querySelector('#btn1-add');
+const minusTeam1 = document.querySelector('#btn1-subtract');
+const addTeam2 = document.querySelector('#btn2-add');
+const minusTeam2 = document.querySelector('#btn2-subtract');
+
+let score1 = 0;
+let score2 = 0;
+
+const addPointsTeam1 = addTeam1.addEventListener('click', () => {
+    score1 += 100;
+    team1Score.textContent = score1;
+});
+
+const addPointsTeam2 = addTeam2.addEventListener('click', () => {
+    score2 += 100;
+    team2Score.textContent = score2;
+});
+
+const minusPointsTeam1 = minusTeam1.addEventListener('click', () => {
+    score1 -= 100;
+    team1Score.textContent = score1;
+});
+
+const minusPointsTeam2 = minusTeam2.addEventListener('click', () => {
+    score2 -= 100;
+    team2Score.textContent = score2;
 });

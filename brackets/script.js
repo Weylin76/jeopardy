@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const participants = ['Player 1', 'Player 2', 'Player 3', 'Player 4', 'Player 5', 'Player 6', 'Player 7', 'Player 8'];
+    const participants = ['Weylin', 'Lori', 'Sasha', 'Melissa', 'Saretta', 'John', 'Kayden', 'Presley'];
     shuffleArray(participants); // Shuffle the participants
     generateBracket(participants);
 
