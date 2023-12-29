@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         c4_1000: "In the second episode, a fake body resembling Will Byers is discovered in this location, complicating the search.",
          //catorgory 5 questions Later Episodes
         c5_200: "What was the name of the ice cream shop employee who helps decode Russian transmissions?",
-        c5_400: "Who did Joyce and Murray pay to fly them to Russia in their mission to rescue Jim Hopper",
+        c5_400: "Who did Joyce and Murray pay to fly them to Russia in their mission to rescue Jim Hopper?",
         c5_600: "What is Papa's real name?",
         c5_800: "Nancy and Robin go undercover to meet this man in a psychiatric hospital, wrongfully imprisoned for a series of killings in Hawkins.",
         c5_1000: "Who was Vecna's first victim in season 4?",
